@@ -35,6 +35,13 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
+					href="/calendar"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Calendar
+				</a><a
+					class="btn btn-sm variant-ghost-surface"
 					href="https://github.com/skeletonlabs/skeleton"
 					target="_blank"
 					rel="noreferrer"
