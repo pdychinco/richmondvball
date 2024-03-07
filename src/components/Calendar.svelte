@@ -1,92 +1,16 @@
-<script>
+<script lang="ts">
     import Card from "./Cards.svelte";
-    let data = [
-        {
-            "date":"2024-02-21",
-            "time":"3pm - 5pm",
-            "cost":"$154"
-        },
-        {
-            "date":"2024-02-28",
-            "time":"3pm - 5pm",
-            "cost":"$154"
-        },
-        {
-            "date":"2024-03-02",
-            "time":"3pm - 5pm",
-            "cost":"$154"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        },
-        {
-            "date":"2024-03-09",
-            "time":"2pm - 5pm",
-            "cost":"$255"
-        }
-    ]
+    import PocketBase, { type RecordModel } from 'pocketbase';
+
+    const url = 'https://richmondvball.pockethost.io/'
+    const client = new PocketBase(url)
+    let data: RecordModel[];
+    async function getData() {
+        data = await client.collection('sessions').getFullList({
+        sort: '-created',
+    });
+    }
+    
 </script>
 <h1 class="h1">this is the calendar component</h1>
 
@@ -103,7 +27,7 @@
     }
     @media only screen and (max-width: 400px) {
         #cards {
-        grid-template-columns: 1;
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 1rem;
         }
     }
