@@ -45,6 +45,7 @@
     "highlight.js": "11.9.0",
     "node": "^21.6.2",
     "nvm": "^0.0.4",
-    "pocketbase": "^0.21.1"
+    "pocketbase": "^0.21.1",
+    "pockethost": "^1.0.0-rc.1"
   }
 }

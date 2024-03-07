@@ -1,15 +1,11 @@
-<script lang="ts">
+<script>
     import Card from "./Cards.svelte";
-    import PocketBase, { type RecordModel } from 'pocketbase';
 
-    const url = 'https://richmondvball.pockethost.io/'
-    const client = new PocketBase(url)
-    let data: RecordModel[];
-    async function getData() {
-        data = await client.collection('sessions').getFullList({
-        sort: '-created',
-    });
-    }
+
+    /**
+	 * @type {any}
+	 */
+     export let data;
     
 </script>
 <h1 class="h1">this is the calendar component</h1>
