@@ -99,8 +99,33 @@
 <style>
     #cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
-        grid-gap: 3rem;
     }
+    @media only screen and (max-width: 400px) {
+        #cards {
+        grid-template-columns: 1;
+        grid-gap: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 599px) {
+        #cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        }
+    }
+    @media only screen and (min-width: 600px) {
+        #cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        #cards {
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 3rem;
+        }
+    }
+    
 </style>
