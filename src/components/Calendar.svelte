@@ -12,7 +12,7 @@
 
 <div id="cards">
     {#each data as cardDetail}
-        <Card startDate={cardDetail.startDate} endDate={cardDetail.endDate} cost={cardDetail.cost}/>
+        <Card startDate={cardDetail.startDate} endDate={cardDetail.endDate} cost={cardDetail.cost} attendee={cardDetail.attendee}/>
     {/each}
 </div>
 

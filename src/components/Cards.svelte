@@ -13,10 +13,20 @@
 	 * @type {any}
 	 */
     export let cost;
+
+        /**
+	 * @type {any}
+	 */
+     export let attendee;
+
+    const date = startDate.split(' ')[0];
+    const startTime = startDate.split(' ')[1].split('.')[0];
+    const endTime = endDate.split(' ')[1].split('.')[0];
 </script>
 <div>
-    <h4 class="h4">{startDate}</h4>
-    <p>The time is {endDate}</p>
+    <h4 class="h4">{date}</h4>
+    <p>The time is {startTime} - {endTime}</p>
     <p>The total cost is ${cost}</p>
+    <p>Remaining spots: {24 - attendee}</p>
     <button>Sign Up</button>
 </div>
