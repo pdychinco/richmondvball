@@ -23,10 +23,11 @@
     const startTime = startDate.split(' ')[1].split('.')[0];
     const endTime = endDate.split(' ')[1].split('.')[0];
 </script>
+
 <div>
     <h4 class="h4">{date}</h4>
-    <p>The time is {startTime} - {endTime}</p>
-    <p>The total cost is ${cost}</p>
+    <p>Time: {startTime} - {endTime}</p>
+    <p>Total cost: ${cost}</p>
     <p>Remaining spots: {24 - attendee}</p>
     <button>Sign Up</button>
 </div>

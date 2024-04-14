@@ -20,7 +20,7 @@ export async function load() {
         filter: `startDate >= "${currentDate} 00:00:00.000Z"`
     });
     console.log(data);
-    const result = data.map((singleData) =>{return {startDate: singleData.startDate, endDate: singleData.endDate, cost: singleData.price, attendee: singleData.attendees}})
+    const result = data.map((/** @type {{ startDate: any; endDate: any; price: any; attendees: any; }} */ singleData) =>{return {startDate: singleData.startDate, endDate: singleData.endDate, cost: singleData.price, attendee: singleData.attendees}})
     client.authStore.clear();
     // console.log(result);
     return {
