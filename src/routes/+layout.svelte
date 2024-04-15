@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { page } from "$app/stores";
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
@@ -39,12 +40,22 @@
 					href="/calendar"
 				>
 					Calendar
-				</a><a
+				</a>
+				{#if $page.data.session}
+				<a 
+					class="btn btn-sm variant-ghost-surface"
+					href="/account"
+					>
+					Account
+				</a>
+				{:else}
+				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="/login"
 				>
 					Login
 				</a>
+				{/if}
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
