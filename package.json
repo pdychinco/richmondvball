@@ -45,6 +45,7 @@
     "@auth/core": "^0.29.0",
     "@auth/sveltekit": "^0.15.0",
     "@floating-ui/dom": "1.6.3",
+    "@sveltejs/adapter-static": "^3.0.1",
     "highlight.js": "11.9.0",
     "node": "^21.6.2",
     "nvm": "^0.0.4",
